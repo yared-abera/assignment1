@@ -1,4 +1,32 @@
 import java.util.Scanner;
+class Student{
+    String name;
+    int Age;
+    String sex;
+    double gpa;
+
+
+
+    // Constructor to initialize the object
+    Student(String name,int Age, String sex, double gpa) {
+        this. name = name;
+        this.Age = Age;
+        this.sex = sex;
+        this.gpa = gpa;
+    }
+
+    // Method to display the object's attributes
+   public void displayObject() {
+        System.out.println("student Attributes:");
+        System.out.println("int: " + name);
+        System.out.println("double: " + Age);
+        System.out.println("char: " + sex);
+        System.out.println("boolean: " + gpa);
+    }
+}
+
+
+
 public class Main {
     // Variable declaration
     static int a = 23;
@@ -13,17 +41,32 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("This code will contain some fundamental concepts in the Java programming language.");
         variableDeclaration();
-        arithmeticOperation();
+        arithmeticOperation(a,b,c);
         relationalOperation();
         logicalOperators();
         forLoop();
         whileLoop();
         switchCase();
+        Scanner scanner = new Scanner(System.in);
+        String name=scanner.nextLine();
+        int Age=scanner. nextInt();
+        String sex=scanner.nextLine();
+        double gpa=scanner.nextDouble();
+
+
+        // Create an object of the SampleObject class
+        Student stud1= new Student(name, Age, sex,gpa );
+
+        // Demonstrate access to object members
+        stud1.displayObject();
         System.out.println("End of program");
+
+
     }
 
     // Variable declaration output
     public static void variableDeclaration() {
+        System.out.println("Variable declaration output");
         System.out.println("a: " + a);
         System.out.println("b: " + b);
         System.out.println("c: " + c );
@@ -35,7 +78,8 @@ public class Main {
     }
 
     // Arithmetic operation output
-    public static void arithmeticOperation() {
+    public static void arithmeticOperation(int a,float b,double c) {
+        System.out.println("Arithmetic operation output");
         int sum = a + 5; // addition
         float difference = a - b; // subtraction
         float product = b * 4; // multiplication
@@ -44,25 +88,25 @@ public class Main {
         int inc = ++a; // increment
         float dec = --b; // decrement
 
-        System.out.println("sum: " + sum);
-        System.out.println("difference: " + difference);
-        System.out.println("product: " + product);
-        System.out.println("quotient: " + quotient);
-        System.out.println("modulus: " + modulus);
-        System.out.println("inc: " + inc);
-        System.out.println("dec: " + dec);
+        System.out.println("sum:a + 5 " + sum);
+        System.out.println("difference:a - b " + difference);
+        System.out.println("product:b * 4 " + product);
+        System.out.println("quotient: c / 3 " + quotient);
+        System.out.println("modulus: a % 3" + modulus);
+        System.out.println("inc: ++a " + inc);
+        System.out.println("dec: --b " + dec);
     }
 
     // Relational operators output
 
     public static void relationalOperation() {
         System.out.println("Relational operators output");
-        System.out.println("b > s: " + (b > e));
-        System.out.println("b < s: " + (b < e));
-        System.out.println("b >= s: " + (b >= e));
-        System.out.println("b <= s: " + (b <= e));
-        System.out.println("b == s: " + (b == e));
-        System.out.println("b != s: " + (b != e));
+        System.out.println("b > e: " + (b > e));
+        System.out.println("b < e: " + (b < e));
+        System.out.println("b >= e: " + (b >= e));
+        System.out.println("b <= e: " + (b <= e));
+        System.out.println("b == e: " + (b == e));
+        System.out.println("b != e: " + (b != e));
     }
 
     // Logical operators output
@@ -70,7 +114,7 @@ public class Main {
     public static void logicalOperators() {
         System.out.println("Logical operators output");
         System.out.println("bool && a > e: " + (bool && a > e));
-        System.out.println("bool  num < s: " + (bool || a < e));
+        System.out.println("bool  a < e: " + (bool || a < e));
         System.out.println("!bool: " + !bool);
     }
 
@@ -141,5 +185,7 @@ public class Main {
             default:
                 System.out.println("Invalid input. Please enter a number between 1 and 7.");
         }
+        System.out.println("The day of the week is: " + dayNumber);
     }
+
 }
